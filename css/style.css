@@ -1,0 +1,52 @@
+body {
+    background: linear-gradient(#fc5c65, #4b6584);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+main {
+    height: 80%;
+    padding-top: 20%;
+}
+
+footer {
+    
+    height: 20%;
+}
+
+#button {
+    background: #ecf0f1;
+    padding: 25px;
+    width: 250px;
+    height: 80vh;
+    border: 2px solid black;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 35px;
+    box-shadow: 5px 5px black;
+}
+
+#next {
+    position: relative;
+    transition: transform 2s;
+}
+
+#next:hover {
+    transform: rotate(360deg);
+    cursor: pointer;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Abril Fatface', serif;
+    font-size: 15vw;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 5vw;    
+}
