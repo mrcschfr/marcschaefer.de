@@ -1,52 +1,316 @@
-body {
-    background: linear-gradient(#fc5c65, #4b6584);
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
+:root {
+    /* Font Sizes */
+    --baseFontSize: 1rem;
+    --baseNavSize: 0.64rem;
+    --smallFontSize: 0.8rem;
+    --smallestFontSize: 0.512rem;
+    
+    --xtra-big-ass-heading: 3.052rem;
+    --xtra-heading: 2.441rem;
+    --heading-1: 1.953rem;
+    --heading-2: 1.563rem;
+    --heading-3: 1.25rem;
+    --heading-4: var(--baseFontSize);
+    --heading-5: var(--smallFontSize);
+    --heading-6: 0.64rem;
+    --heading-7: var(--smallestFontSize);
+
+    /* Colors */
+    --color-neutral-light: #F2F2F2;
+    --color-neutral-dark: #E5E5E5;
+    --color-primary-light: #B7BDD5;
+    --color-primary-normal: #6E7AAB;
+    --color-primary-darker: #404E7C;
+    --color-primary-darkest: #11264F;
+    --color-secondary: #B80C09;
 }
 
-main {
-    height: 80%;
-    padding-top: 20%;
+body {
+    font-family: "Ubuntu Mono", sans-serif;
 }
+
+h1 {
+    font-size: var(--heading-2);
+    padding-bottom: 5px;
+}
+
+h2 {
+    font-size: var(--heading-3);
+}
+
+.boxed-header {
+    text-transform: uppercase;
+    padding: 20px;
+}
+
+.boxed-header.darkest {
+    background-color: var(--color-primary-darkest);
+    color: #fff;
+}
+
+.boxed-header.darker {
+    background-color: var(--color-primary-darker);
+    color: #fff;
+}
+
+.boxed-header.normal {
+    background-color: var(--color-primary-normal);
+    color: #fff;
+}
+
+.boxed-header.light {
+    background-color: var(--color-primary-light);
+    color: #000;
+}
+
+section {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.section-header {
+    border-bottom: 2px solid black;
+    margin: 0px 0px 50px 0px;
+}
+
+.section-subheader {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+
+button {
+    border-radius: 10px;
+    height: 40px;
+    width: 125px;
+    font-family: inherit;
+}
+
+/* INTRO */
+
+#intro {
+    background-color: #fff;
+}
+
+#top-image {
+    margin-bottom: 50px;
+}
+
+#top-image img {
+    height: 200px;
+    margin: auto;
+    display: block;
+}
+
+#greeting {
+    display: flex;
+    flex-direction: row;
+}
+
+#greeting #before-intro {
+    font-size: var(--heading-1);
+    margin-right: 15px;
+}
+
+#greeting .section-header {
+    flex-grow: 2;
+}
+
+#greeting .section-header h1 {
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+#intro h2 {
+    font-size: var(--heading-3);
+}
+
+#button-row {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#button-contact {
+    background-color: var(--color-secondary);
+    border: 1px solid var(--color-secondary);
+    color: #fff;
+    font-size: var(--heading-3);
+}
+
+#button-learnmore {
+    background-color: #fff;
+    border: 1px solid #000;
+    font-size: var(--heading-3);
+}
+
+/* SOCIAL */
+
+#social {
+    background-color: var(--color-neutral-light);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#social .icon {
+    background-color: var(--color-primary-darkest);
+    display: inline-block;
+    border-radius: 50%;
+    padding: 5px;
+    margin: 5px;
+    width: 30px;
+    height: 30px;
+    fill: white;
+}
+
+#social .icon svg {
+    margin: 5px;
+}
+
+/* SERVICES */
+
+#services {
+    background-color: var(--color-neutral-dark);
+}
+
+#services svg {
+    height: 75px;
+}
+
+.section {
+    margin-bottom: 40px;
+}
+
+.section:last-of-type {
+    margin-bottom: 0px;
+}
+
+.section:nth-of-type(2n+1) .section-subheader {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.section-subheader-icon {
+    padding: 0px 10px 0px 0px;  
+    align-self: start;
+}
+
+.section:nth-of-type(2n+1) .section-subheader .section-subheader-icon {
+    padding: 0px 0px 0px 10px;  
+}
+
+/* PORTFOLIO */
+
+#portfolio {
+    background-color: #fff;
+}
+
+/* TOOLS */
+
+#tools {
+    background-color: var(--color-neutral-dark);
+}
+
+#tools .icon {
+    display: inline-block;
+    border-radius: 50%;
+    padding: 5px;
+    margin: 5px;
+    width: 30px;
+    height: 30px;
+    fill: white;
+}
+
+#tools-type-programming .icon {
+    background-color: var(--color-primary-darkest);
+}
+
+#tools-type-programming .icon:first-of-type {
+    margin-left: 0px;
+}
+
+#tools-type-libraries .icon {
+    background-color: var(--color-primary-darker);
+}
+
+#tools-type-libraries .icon:first-of-type {
+    margin-left: 0px;
+}
+
+#tools-type-tools .icon {
+    background-color: var(--color-primary-normal);
+}
+
+#tools-type-tools .icon:first-of-type {
+    margin-left: 0px;
+}
+
+#tools .icon svg {
+    margin: 5px;
+}
+
+
+/* ABOUT ME */
+
+#about-me {
+    background-color: #fff;
+}
+
+#about-me svg {
+    height: 75px;
+}
+
+/* CONTACT */
+
+#contact {
+    background: linear-gradient(#fff, var(--color-primary-normal));
+    min-height: 600px;
+}
+
+#contact-form {
+    margin: 40px 0px;
+}
+
+form label {
+    display: block;
+}
+
+form .form-section {
+    margin: 20px 0px;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 5px 10px 5px;
+    margin: 10px 0px;
+    font-family: inherit;
+}
+
+#message {
+    height: 150px;
+}
+
+
+
+/* FOOTER */
 
 footer {
-    
-    height: 20%;
+    height: 75px;
+    background-color: var(--color-primary-darkest);
 }
 
-#button {
-    background: #ecf0f1;
-    padding: 25px;
-    width: 250px;
-    height: 80vh;
-    border: 2px solid black;
-    text-align: center;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 35px;
-    box-shadow: 5px 5px black;
-}
-
-#next {
-    position: relative;
-    transition: transform 2s;
-}
-
-#next:hover {
-    transform: rotate(360deg);
-    cursor: pointer;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Abril Fatface', serif;
-    font-size: 15vw;
-}
-
-body {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
-    font-size: 5vw;    
+footer span a {
+    color: #fff;
 }
