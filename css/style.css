@@ -38,9 +38,27 @@ h2 {
     font-size: var(--heading-3);
 }
 
+.blinking-cursor {
+    font-weight: 600;
+    font-size: var(--heading-2);
+    animation: blink-dark-background 700ms infinite;
+}
+
+@keyframes blink-dark-background {
+    0% {
+        color: var(--color-neutral-dark)
+    }
+    100% {
+        color: var(--color-secondary);
+    }
+}
+
 .boxed-header {
     text-transform: uppercase;
     padding: 20px;
+    box-sizing: border-box;
+    min-height: 80px;
+    width: 100%;
 }
 
 .boxed-header.darkest {
@@ -64,10 +82,11 @@ h2 {
 }
 
 section {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 25px;
+    padding-right: 25px;
     padding-top: 50px;
     padding-bottom: 50px;
+    box-sizing: border-box;
 }
 
 .section-header {
@@ -82,39 +101,65 @@ section {
     margin-bottom: 20px;
 }
 
-
 button {
     border-radius: 10px;
     height: 40px;
-    width: 125px;
     font-family: inherit;
+}
+
+button:hover {
+    box-shadow: -2px -2px black;
+}
+
+.highlight-bullet {
+    color: var(--color-secondary);
+    font-size: var(--heading-3);
+    font-weight: bold;
+    margin-right: 15px;
 }
 
 /* INTRO */
 
 #intro {
     background-color: #fff;
+    height: 100vh;
 }
 
 #top-image {
-    margin-bottom: 50px;
+    margin: 10px 0px 50px 0px;
 }
 
 #top-image img {
-    height: 200px;
+    height: 30vh;
     margin: auto;
     display: block;
 }
 
 #greeting {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    font-size: var(--heading-1);
 }
 
-#greeting #before-intro {
+#greeting #whoami {
+    display: flex;
+    flex-direction: row;
     font-size: var(--heading-1);
-    margin-right: 15px;
+    margin-top: 15px;
 }
+
+#greeting #whoami .section-header {
+    margin-left: 15px;
+}
+
+#greeting #whoami h1 {
+    display: flex;
+    font-size: var(--heading-1);
+    flex-direction: row;
+    font-weight: 600;
+    color: var(--color-secondary)
+}
+
 
 #greeting .section-header {
     flex-grow: 2;
@@ -130,7 +175,7 @@ button {
 }
 
 #button-row {
-    margin-top: 25px;
+    margin-top: 5vh;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -141,12 +186,14 @@ button {
     border: 1px solid var(--color-secondary);
     color: #fff;
     font-size: var(--heading-3);
+    width: 40%
 }
 
 #button-learnmore {
     background-color: #fff;
     border: 1px solid #000;
     font-size: var(--heading-3);
+    width: 40%;
 }
 
 /* SOCIAL */
@@ -231,28 +278,43 @@ button {
     fill: white;
 }
 
-#tools-type-programming .icon {
-    background-color: var(--color-primary-darkest);
+.tools-type {
+    margin: 40px 0px 20px 0px;
 }
 
-#tools-type-programming .icon:first-of-type {
-    margin-left: 0px;
+.tools-type:nth-of-type(3n+3) {
+    margin: 40px 0px 0px 0px;
+}
+
+.tools-type-header {
+    font-size: var(--heading-3);
+}
+
+.tools-type-icons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 20px 0px;
+}
+
+.icon-and-text {
+    width: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+#tools-type-programming .icon {
+    background-color: var(--color-primary-darkest);
 }
 
 #tools-type-libraries .icon {
     background-color: var(--color-primary-darker);
 }
 
-#tools-type-libraries .icon:first-of-type {
-    margin-left: 0px;
-}
-
 #tools-type-tools .icon {
     background-color: var(--color-primary-normal);
-}
-
-#tools-type-tools .icon:first-of-type {
-    margin-left: 0px;
 }
 
 #tools .icon svg {
@@ -278,7 +340,7 @@ button {
 }
 
 #contact-form {
-    margin: 40px 0px;
+    margin: 40px 0px 60px 0px;
 }
 
 form label {
@@ -296,13 +358,33 @@ form textarea {
     padding: 10px 5px 10px 5px;
     margin: 10px 0px;
     font-family: inherit;
+    font-size: inherit;
 }
 
 #message {
     height: 150px;
 }
 
+#button-submit {
+    background-color: var(--color-secondary);
+    border: 1px solid var(--color-secondary);
+    color: #fff;
+    font-size: var(--baseFontSize);
+    display: block;
+    margin: auto;
+    width: 60%;
+}
 
+#bottom-image {
+    margin: 100px 0px 0px 0px;
+
+}
+
+#bottom-image img {
+    display: block;
+    margin: auto;
+    width: 225px;
+}
 
 /* FOOTER */
 
@@ -311,6 +393,19 @@ footer {
     background-color: var(--color-primary-darkest);
 }
 
-footer span a {
+footer ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+footer ul li:first-of-type {
+    margin-right: 15px;
+}
+
+footer li a {
     color: #fff;
 }
+
