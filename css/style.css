@@ -156,7 +156,6 @@ button:hover {
     display: flex;
     font-size: var(--heading-1);
     flex-direction: row;
-    font-weight: 600;
     color: var(--color-secondary)
 }
 
@@ -260,6 +259,75 @@ button:hover {
 
 #portfolio {
     background-color: #fff;
+}
+
+.slider {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 50px 0px;
+}
+  
+.control {
+    border: 1px solid black;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.control svg {
+    height: 100%;
+}
+  
+.control:hover {
+    background-color: black;
+    color: white;
+}
+  
+#showcase {
+    border: 1px solid black;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    margin: 0px 15px;
+    background: url(https://preview.redd.it/9k1j9k0axpi71.png?width=960&crop=smart&auto=webp&s=7f8dd0b0202b708a1a4c1a5acd126af1776ca755);
+}
+
+#showcase-description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid black;
+    padding: 25px;
+}
+
+#showcase-description h3 {
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+  
+.rotate {
+    animation-iteration-count: 1;
+    animation-name: rotate;
+    animation-duration: 1000ms;
+}
+  
+@keyframes rotate {
+  0% {
+    transform: rotateY(0deg);
+    box-shadow: none;
+  }
+  50% {
+      box-shadow: 10px 10px 20px grey;
+  }
+  100% {
+    box-shadow: none;  
+    transform: rotateY(360deg);
+  }
 }
 
 /* TOOLS */
